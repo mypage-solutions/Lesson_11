@@ -12,9 +12,9 @@ public class PersonFactory {
 
     public static void main(String[] args) {
 
-        PersonFactory personData = new PersonFactory();
-        personData.addPerson(100);
-        System.out.println(personData.persons);
+        PersonFactory personList = new PersonFactory();
+        personList.addPerson(100);
+        System.out.println(personList.persons);
 
     }
 
@@ -35,9 +35,8 @@ public class PersonFactory {
 
     private List<Person> persons = new ArrayList<>();
 
-    Person person;
-
     public void addPerson(int number) {
+        Person person;
         for (int i = 0; i < number; i++) {
             persons.add(person = new Person(setFirstName(), setLastName(), setAge(), setHeight()));
             person.setWeight(round(Math.pow(person.getHeight() / 100d, 2) * setBmi(), 1));
