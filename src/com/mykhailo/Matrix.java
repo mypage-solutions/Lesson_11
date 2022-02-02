@@ -55,9 +55,9 @@ public class Matrix {
     }
 
     public static int[][] swapRows(int[][] matrix, int firstRow, int secondRow) {
-        int[] tmpRow = matrix[firstRow - 1];
+        int[] tempRow = matrix[firstRow - 1];
         matrix[firstRow - 1] = matrix[secondRow - 1];
-        matrix[secondRow - 1] = tmpRow;
+        matrix[secondRow - 1] = tempRow;
         return matrix;
     }
 
