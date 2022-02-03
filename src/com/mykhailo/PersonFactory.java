@@ -13,7 +13,7 @@ public class PersonFactory {
     public static void main(String[] args) {
 
         PersonFactory personList = new PersonFactory();
-        personList.addPerson(100);
+        personList.addPersons(100);
         System.out.println(personList.persons);
 
     }
@@ -28,40 +28,26 @@ public class PersonFactory {
     Обеспечить чтобы случайные данные (вес, рост, возраст) выглядели правдоподобно:
     не было человека весом 3 кг и ростом 180 итд.
     */
+    private List<Person> persons = new ArrayList<>();
+
     public static double round(double value, int places) {
         double scale = Math.pow(10, places);
         return Math.round(value * scale) / scale;
     }
 
-    private List<Person> persons = new ArrayList<>();
+    public void addPersons(int number) {
 
-    public void addPerson(int number) {
-        Person person;
         for (int i = 0; i < number; i++) {
-            persons.add(person = new Person(setFirstName(), setLastName(), setAge(), setHeight()));
-            person.setWeight(round(Math.pow(person.getHeight() / 100d, 2) * setBmi(), 1));
+            String firstName = FIRST_NAME[RANDOM.nextInt(FIRST_NAME.length)];
+            String lastName = LAST_NAME[RANDOM.nextInt(LAST_NAME.length)];
+            int age = RANDOM.nextInt(46) + 20;
+            int height = RANDOM.nextInt(51) + 150;
+            //  The formula is BMI = kg/m2 where kg is a person's weight in kilograms and m2 is their height in metres squared.
+            //  A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9.
+            int bmi = RANDOM.nextInt(13) + 18;
+            double weight = round(Math.pow(height / 100d, 2) * bmi, 1);
+            Person person = new Person(firstName, lastName, age, height, weight);
+            persons.add(person);
         }
-    }
-
-    public static String setFirstName() {
-        return FIRST_NAME[RANDOM.nextInt(FIRST_NAME.length)];
-    }
-
-    public static String setLastName() {
-        return LAST_NAME[RANDOM.nextInt(LAST_NAME.length)];
-    }
-
-    public static int setAge() {
-        return RANDOM.nextInt(46) + 20;
-    }
-
-    public static int setHeight() {
-        return RANDOM.nextInt(51) + 150;
-    }
-
-    //  The formula is BMI = kg/m2 where kg is a person's weight in kilograms and m2 is their height in metres squared.
-    //  A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9.
-    public static int setBmi() {
-        return RANDOM.nextInt(13) + 18;
     }
 }
