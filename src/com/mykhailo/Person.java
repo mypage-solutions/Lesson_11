@@ -8,18 +8,11 @@ public class Person {
     private int height;
     private double weight;
 
-    public Person(String firstName, String lastName, int age, int height) {
+    public Person(String firstName, String lastName, int age, int height, double weight) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.height = height;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setWeight(double weight) {
         this.weight = weight;
     }
 
