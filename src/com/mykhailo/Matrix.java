@@ -61,7 +61,7 @@ public class Matrix {
     }
 
     /**
-     * Method to multiply each element of 2d array
+     * Method to multiply each element of a 2D array
      */
     public static int[][] multiply(int[][] matrix, int value) {
         for (int i = 0; i < matrix.length; i++) {
@@ -73,7 +73,7 @@ public class Matrix {
     }
 
     /**
-     *  Method for converting matrix to array
+     *  Method for converting matrix to an array
      */
     public static int[] toArray(int[][] matrix) {
         int[] array = new int[matrix.length * matrix[0].length];
