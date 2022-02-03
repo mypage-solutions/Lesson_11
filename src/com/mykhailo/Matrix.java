@@ -18,7 +18,7 @@ public class Matrix {
         System.out.println();
         print(swapRows(MATRIX, 1, 2));
         System.out.println();
-        print(multiple(MATRIX, 2));
+        print(multiply(MATRIX, 2));
         System.out.println();
         System.out.println(Arrays.toString(toArray(MATRIX)));
         System.out.println();
@@ -26,16 +26,9 @@ public class Matrix {
 
     }
 
-    /*
-    2*. Написать класс для работы с матрицами (2-мерными массивами), методы:
-    print(int[][] matrix) - печатает матрицу
-    swapColumns(int[][] matrix, i, j) - меняет 2 столбца местами
-    swapRows(int[][] matrix, i, j) - меняет 2 рядка местами
-    mul(int[][] matrix, int value) - умножает матрицу на число
-    toArray(int[][] matrix) - превращает матрицу в массив. Например если была матрица на 3x4 то вернуть массив из 12 элементов
-    max(int[][] matrix) - возвращает максимальный элемент матрицы
-    */
-
+    /**
+     * Method for printing out a 2D array in matrix format
+     */
     public static void print(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -45,6 +38,9 @@ public class Matrix {
         }
     }
 
+    /**
+     * Method for swapping columns in a 2D array
+     */
     public static int[][] swapColumns(int[][] matrix, int firstColumn, int secondColumn) {
         for (int i = 0; i < matrix.length; i++) {
             int temp = matrix[i][firstColumn - 1];
@@ -54,6 +50,9 @@ public class Matrix {
         return matrix;
     }
 
+    /**
+     * Method for swapping rows in a 2D array
+     */
     public static int[][] swapRows(int[][] matrix, int firstRow, int secondRow) {
         int[] tempRow = matrix[firstRow - 1];
         matrix[firstRow - 1] = matrix[secondRow - 1];
@@ -61,7 +60,10 @@ public class Matrix {
         return matrix;
     }
 
-    public static int[][] multiple(int[][] matrix, int value) {
+    /**
+     * Method to multiply each element of 2d array
+     */
+    public static int[][] multiply(int[][] matrix, int value) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] *= value;
@@ -70,6 +72,9 @@ public class Matrix {
         return matrix;
     }
 
+    /**
+     *  Method for converting matrix to array
+     */
     public static int[] toArray(int[][] matrix) {
         int[] array = new int[matrix.length * matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
@@ -80,6 +85,9 @@ public class Matrix {
         return array;
     }
 
+    /**
+     *  Method to find minimum value of a matrix
+     */
     public static int maxValue(int[][] matrix) {
         int maxValue = matrix[0][0];
         for (int i = 0; i < matrix.length; i++) {
