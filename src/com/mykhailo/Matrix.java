@@ -26,7 +26,7 @@ public class Matrix {
 
     }
 
-    /**
+    /*
      * Method for printing out a 2D array in matrix format
      */
     public static void print(int[][] matrix) {
@@ -38,7 +38,7 @@ public class Matrix {
         }
     }
 
-    /**
+    /*
      * Method for swapping columns in a 2D array
      */
     public static int[][] swapColumns(int[][] matrix, int firstColumn, int secondColumn) {
@@ -50,7 +50,7 @@ public class Matrix {
         return matrix;
     }
 
-    /**
+    /*
      * Method for swapping rows in a 2D array
      */
     public static int[][] swapRows(int[][] matrix, int firstRow, int secondRow) {
@@ -60,7 +60,7 @@ public class Matrix {
         return matrix;
     }
 
-    /**
+    /*
      * Method to multiply each element of a 2D array
      */
     public static int[][] multiply(int[][] matrix, int value) {
@@ -72,7 +72,7 @@ public class Matrix {
         return matrix;
     }
 
-    /**
+    /*
      *  Method for converting matrix to an array
      */
     public static int[] toArray(int[][] matrix) {
@@ -85,7 +85,7 @@ public class Matrix {
         return array;
     }
 
-    /**
+    /*
      *  Method to find minimum value of a matrix
      */
     public static int maxValue(int[][] matrix) {
